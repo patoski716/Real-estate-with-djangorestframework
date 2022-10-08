@@ -23,7 +23,7 @@ STATUS = (
 )
 
 class Listing(models.Model):
-    realtor=models.ManyToManyField(Realtor, related_name='agent')
+    realtor=models.ForeignKey(Realtor, related_name='agent', on_delete= models.CASCADE, default=1,null=False)
     slug = models.SlugField(max_length=250 ,default='')
     name=models.CharField(max_length=200,null=True)
     cover_image=models.ImageField(_("Image"), upload_to=upload_to,null=True, blank=True)
@@ -41,6 +41,7 @@ class Listing(models.Model):
     def __str__(self):
         return self.name
 
+    
 
 class Contact(models.Model):
     listing = models.CharField(max_length=200)
