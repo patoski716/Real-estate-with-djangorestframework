@@ -65,7 +65,6 @@ class ContactSerializer(serializers.ModelSerializer):
             'created_at',
         ),
         fields = (
-            'listing',
             'name',
             'email',
             'phone',

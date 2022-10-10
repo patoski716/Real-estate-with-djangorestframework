@@ -44,7 +44,6 @@ class Listing(models.Model):
     
 
 class Contact(models.Model):
-    listing = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     email = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
