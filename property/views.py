@@ -1,11 +1,9 @@
 from django.shortcuts import get_object_or_404
-
 # Create your views here.
 from rest_framework.response import Response
-
 from .models import Realtor,Listing,Contact
 from .serializers import RealtorSerializer,ListingSerializer,ContactSerializer
-from rest_framework import generics,status, permissions
+from rest_framework import generics,status
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.views import APIView
 

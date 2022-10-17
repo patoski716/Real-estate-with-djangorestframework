@@ -5,3 +5,5 @@ from .models import *
 
 admin.site.register(Realtor)
 admin.site.register(Listing)
+admin.site.register(Contact)
+

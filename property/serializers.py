@@ -20,32 +20,26 @@ class RealtorSerializer(serializers.ModelSerializer):
         )
 
 class ListingSerializer(serializers.ModelSerializer):
-    # realtor = serializers.StringRelatedField()
-    realtor_name = serializers.CharField(source='realtor.name')
-    realtor_email = serializers.EmailField(source='realtor.email')
-    realtor_phone = serializers.CharField(source='realtor.phone')
-    realtor_image = serializers.ImageField(source='realtor.image')
-
-
-
+    # realtor_name = serializers.CharField(source='realtor.name')
+    # realtor_email = serializers.EmailField(source='realtor.email')
+    # realtor_phone = serializers.CharField(source='realtor.phone')
+    # realtor_image = serializers.ImageField(source='realtor.image')
 
     class Meta:
         model = Listing
         read_only_fields = (
             'created_at',
-            
+            # 'realtor_email',
+            # 'realtor_name',
+            # 'realtor_phone',
+            # 'realtor_image',            
         ),
         fields = (
             'id',
             'slug',
             'name',
-            'realtor',
             'parking_spot',
-            'realtor_email',
-            'realtor_name',
-            'realtor_phone',
-            'realtor_image',
-            'cover_image',
+            'image',
             'rooms',
             'bathroom',
             'status',
